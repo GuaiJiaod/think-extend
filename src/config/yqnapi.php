@@ -30,7 +30,12 @@ $api_config = [
         'expire' => 0,
     ],
 
-
+    //初始化应用自动执行
+    "cron_on" => false, //是否开启
+    "cron_time" => 60, //检查执行间隔
+    "cron_config" => [
+        //自主执行文件["goods_tj", "1 d", '2017-11-04 00:01:01'] 文件名 时间间隔 初始执行时间
+    ]
 ];
 
 /**
@@ -40,5 +45,9 @@ $api_config = [
     api_refresh_token();
 });
 
+/**
+ * 默认加载自动执行文件
+ */
+\think\facade\Hook::add('app_init','yiqiniu\\behavior\\CronRun');
 
 return $api_config;
