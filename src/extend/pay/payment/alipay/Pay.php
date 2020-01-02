@@ -1,6 +1,6 @@
 <?php
 
-namespace com\payment\alipay;
+namespace pay\payment\alipay;
 class Pay
 {
     public $gateway_url = "https://openapi.alipay.com/gateway.do";

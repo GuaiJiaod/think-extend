@@ -1,6 +1,6 @@
 <?php
 
-namespace com\payment\wx;
+namespace pay\payment\wx;
 class Pay
 {
     public function __construct($config)
